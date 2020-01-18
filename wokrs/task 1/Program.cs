@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace task_1 {
 	class Program {
 		// Делегат-тип.
-		public delegate int cast(double val); 
+		public delegate int cast(double val);
 		public static Random rnd = new Random(113);
 		static void Main(string[] args) {
 			// Создание переменных и их инстанцирование.
-			cast cast1 = delegate (double val) { return (int)val % 2 == 0 ? (int)val : (int)val + 1; };
-			cast cast2 = delegate (double val) { return (int)Math.Log10(val) + 1; };
+			cast cast1 = (double val) => (int)val % 2 == 0 ? (int)val : (int)val + 1;
+			cast cast2 = (double val) => (int)Math.Log10(val) + 1;
 			cast castsumm = cast1;
 			castsumm += cast2;
 
